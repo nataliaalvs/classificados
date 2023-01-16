@@ -71,15 +71,14 @@
     width: 250px;
     height: 100vh;
     overflow-y: auto;
-    background: var(--secondary);
-    transition: 0.5s;
+    background: #fff    transition: 0.5s;
     z-index: 999;
 }
 
 .content {
     margin-left: 250px;
     min-height: 100vh;
-    background: var(--dark);
+    background: #fff;
     transition: 0.5s;
 }
 
@@ -121,18 +120,18 @@
 /*** Navbar ***/
 .sidebar .navbar .navbar-nav .nav-link {
     padding: 7px 20px;
-    color: var(--light);
+    color:black;
     font-weight: 500;
-    border-left: 3px solid var(--secondary);
+    /* border-left: 3px solid var(--secondary); */
     border-radius: 0 30px 30px 0;
     outline: none;
 }
 
 .sidebar .navbar .navbar-nav .nav-link:hover,
 .sidebar .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
-    background: var(--dark);
-    border-color: var(--primary);
+    color:black;
+    background: #fff;
+    border-color: #fff;
 }
 
 .sidebar .navbar .navbar-nav .nav-link i {
@@ -141,13 +140,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--dark);
+    background: #fff;
     border-radius: 40px;
 }
 
 .sidebar .navbar .navbar-nav .nav-link:hover i,
 .sidebar .navbar .navbar-nav .nav-link.active i {
-    background: var(--secondary);
+    background: #fff;
 }
 
 .sidebar .navbar .dropdown-toggle::after {
@@ -168,24 +167,24 @@
 .sidebar .navbar .dropdown-item {
     padding-left: 25px;
     border-radius: 0 30px 30px 0;
-    color: var(--light);
+    color: black;
 }
 
 .sidebar .navbar .dropdown-item:hover,
 .sidebar .navbar .dropdown-item.active {
-    background: var(--dark);
+    background: #fff;
 }
 
 .content .navbar .navbar-nav .nav-link {
     margin-left: 25px;
     padding: 12px 0;
-    color: var(--light);
+    color:black;
     outline: none;
 }
 
 .content .navbar .navbar-nav .nav-link:hover,
 .content .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color:black;
 }
 
 .content .navbar .sidebar-toggler,
@@ -195,17 +194,17 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--dark);
+    background: #fff;
     border-radius: 40px;
 }
 
 .content .navbar .dropdown-item {
-    color: var(--light);
+    color: black;
 }
 
 .content .navbar .dropdown-item:hover,
 .content .navbar .dropdown-item.active {
-    background: var(--dark);
+    background: #fff;
 }
 
 .content .navbar .dropdown-toggle::after {
