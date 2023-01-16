@@ -71,7 +71,7 @@
     width: 250px;
     height: 100vh;
     overflow-y: auto;
-    background: #fff    transition: 0.5s;
+    background: #fff transition: 0.5s;
     z-index: 999;
 }
 

@@ -8,3 +8,7 @@ def inicio(request):
 def sobre(request):
 
     return render (request, 'sobre.html')
+
+def detalhes(request):
+
+    return render (request, 'detalhes.html')

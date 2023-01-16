@@ -21,5 +21,7 @@ urlpatterns = [
     # path('', home, name='home'),
     path('', inicio, name='inicio'),
     path('sobre/', sobre, name='sobre'),
+    path('detalhes/', detalhes, name='detalhes'),
+
 
 ]
