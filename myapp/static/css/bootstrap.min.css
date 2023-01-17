@@ -4,6 +4,8 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -4137,14 +4139,14 @@ fieldset:disabled .btn {
 .dropdown-item:hover,
 .dropdown-item:focus {
     color: #1e2125;
-    background-color: #e9ecef
+    background-color: #d3ab91
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #EB1616
+    background-color: #d3ab91
 }
 
 .dropdown-item.disabled,

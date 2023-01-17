@@ -22,6 +22,7 @@ urlpatterns = [
     path('', inicio, name='inicio'),
     path('sobre/', sobre, name='sobre'),
     path('detalhes/', detalhes, name='detalhes'),
+    path('form/', form, name='form'),
 
 
 ]

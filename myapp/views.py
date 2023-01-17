@@ -12,3 +12,7 @@ def sobre(request):
 def detalhes(request):
 
     return render (request, 'detalhes.html')
+
+def form(request):
+
+    return render (request, 'form.html')
