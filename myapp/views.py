@@ -16,3 +16,7 @@ def detalhes(request):
 def form(request):
 
     return render (request, 'form.html')
+
+def crud(request):
+
+    return render (request, 'create.html')

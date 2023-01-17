@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4 text-center">Novo classificado</h2>
+<div class="col-sm-12 col-xl-8">
+    <div class="bg-secondary rounded h-100 p-4">
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nome do classificado</label>
+                <input type="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Nome do classificado">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Descrição</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Insira as informações do seu classificado">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Telefone</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Telefone do responsável">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Localização</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Insira a cidade e estado que o classificado está">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Valor</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Valor do classificado">
+            </div>
+            <button type="submit" class="btn btn-primary">Criar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

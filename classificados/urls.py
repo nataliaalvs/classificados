@@ -23,6 +23,7 @@ urlpatterns = [
     path('sobre/', sobre, name='sobre'),
     path('detalhes/', detalhes, name='detalhes'),
     path('form/', form, name='form'),
+    path('novo/', crud, name='crud'),
 
 
 ]

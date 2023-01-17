@@ -8366,7 +8366,8 @@ fieldset:disabled .btn {
 }
 
 .bg-highlight {
-    background-color: #d3ab91;
+    /* background-color: #d3ab91; */
+    background-color: #c9abab;
 }
 
 .bg-success {
