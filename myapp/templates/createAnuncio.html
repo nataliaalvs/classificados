@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2 class="mb-4 text-center">Novo classificado</h2>
+<div class="col-sm-12 col-xl-8">
+    <div class="bg-secondary rounded h-100 p-4">
+        <form method="post">
+            {% csrf_token %}
+            {{formAnuncio|crispy}}
+            <button type="submit" class="btn btn-primary">Criar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

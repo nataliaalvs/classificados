@@ -24,6 +24,6 @@ urlpatterns = [
     path('detalhes/', detalhes, name='detalhes'),
     path('form/', form, name='form'),
     path('novo/', crud, name='crud'),
-
+    path('createAnuncio/', createAnuncio, name="create"),
 
 ]

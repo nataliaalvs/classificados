@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import *
+
+from myapp.forms import *
 
 # Create your views here.
 def inicio(request):
@@ -20,3 +22,11 @@ def form(request):
 def crud(request):
 
     return render (request, 'create.html')
+
+def createAnuncio(request):
+    form = AnunciosForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect("/")
+    pacote = {"formAnuncio": form}
+    return render(request, "createAnuncio.html", pacote)
