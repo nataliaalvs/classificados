@@ -21,9 +21,7 @@ urlpatterns = [
     # path('', home, name='home'),
     path('', inicio, name='inicio'),
     path('sobre/', sobre, name='sobre'),
-    path('detalhes/', detalhes, name='detalhes'),
+    path('detalhes/<int:id>', detalhes, name='detalhes'),
     path('form/', form, name='form'),
-    path('novo/', crud, name='crud'),
-    path('createAnuncio/', createAnuncio, name="create"),
-
+    path('create/', crud, name='create'),
 ]

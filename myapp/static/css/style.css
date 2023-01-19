@@ -7,7 +7,9 @@
     --light: #6C7293;
     --dark: #000000;
 }
-
+.asteriskField {
+    display: none;
+}
 .back-to-top {
     position: fixed;
     display: none;

@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2 class="text-center">Título</h2>
+<h2 class="text-center">{{ anuncio.titulo }}</h2>
 <div class="container py-2 px-5">
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, temporibus! Exercitationem repellendus voluptatum libero repellat architecto aliquam rem. Vero et, quidem odit quam placeat iste aut sit facere animi laudantium!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptas minus doloribus velit? Totam vel aut maiores. Voluptas architecto nostrum vero magni tempore distinctio qui sapiente rem quasi, atque praesentium.
-    </p>
+    <p> {{ anuncio.anuncio}}</p>
 
     <div class="pt-1 pb-3">
         <div class="d-flex align-items-center justify-content-between">
-            <p><i class="bi bi-geo-alt pe-2"></i>Caicó, Rio Grande do Norte</p>
-            <p class="mt-3 fw-bold"><i class="bi bi-currency-dollar"></i>R$105,000</p>
+            <p><i class="bi bi-geo-alt pe-2"></i>{{anuncio.cidade}}</p>
+            <p class="mt-3 fw-bold"><i class="bi bi-currency-dollar"></i>R$ {{ anuncio.valor }}</p>
         </div>
     </div>
 
@@ -21,21 +19,21 @@
             <thead>
               <tr>
                 <th><i class="bi bi-person-heart px-1"></i>Responsável</th>
-                <td>Nati</td>
+                <td>{{anuncio.responsavel}}</td>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th><i class="bi bi-phone pe-2"></i>Celular</th>
-                <td>8888888</td>
+                <td>{{anuncio.celular}}</td>
               </tr>
               <tr>
                 <th><i class="bi bi-geo-alt pe-2"></i>Cidade</th>
-                <td>Caicó, RN</td>
+                <td> {{anuncio.cidade}}</td>
               </tr>
               <tr>
                 <th><i class="bi bi-house-heart pe-2"></i></i>Endereço</th>
-                <td>Rua Tereza Medeiros, Boa Passagem, nº536</td>
+                <td>{{anuncio.endereco}}</td>
               </tr>
             </tbody>
           </table>
