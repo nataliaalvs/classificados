@@ -7,6 +7,10 @@ def inicio(request):
     anuncios = Anuncios.objects.all()
     return render (request, 'index.html',{"anuncios": anuncios})
 
+def listagem(request):
+    lista = Anuncios.objects.all()
+    return render(request,'listagem.html', {'lista':lista})
+
 def sobre(request):
 
     return render (request, 'sobre.html')
@@ -26,3 +30,11 @@ def crud(request):
         return redirect("/")
     pacote = {"formAnuncio": form}
     return render(request, "create.html", pacote)
+
+def update(request, id):
+    anuncio = Anuncios.objects.get(pk=id)
+    formAnuncio = AnunciosForm(request.POST or None, instance=anuncio)
+    if formAnuncio.is_valid():
+        formAnuncio.save()
+        return redirect("/") 
+    return render(request, "create.html", {"formAnuncio": formAnuncio})
