@@ -4,12 +4,25 @@
 <div class="row g-4">
     {% for anuncio in anuncios %}
     <div class="col-sm-6 col-xl-4">
-        <div class="bg-terciary rounded p-4 ">
+        <div class="bg-terciary rounded p-4">
             <div class="pt-1">
-                <p class="h3 text-center border-bottom">{{ anuncio.titulo }}</p>
-                <p class="p-2">{{ anuncio.anuncio}}</p>
+                
+                <div class="d-flex align-items-center justify-content-between">
+                    <p class="h3 text-center border-bottom">{{ anuncio.titulo }}</p>
+                    <!-- dropdown menu -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                            <i class="bi bi-three-dots"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-center border-0 rounded-2 m-0 bg-highlight text-center">
+                            <a href="{% url 'update' anuncio.id %}" class="dropdown-item">Editar</a>
+                            <a href="#" class="dropdown-item">Apagar</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="py-2">{{ anuncio.anuncio}}</p>
                 <p><i class="bi bi-geo-alt"></i>{{ anuncio.cidade}}</p>
-                <div class="d-flex align-items-center justify-content-around">
+                <div class="d-flex align-items-center justify-content-between">
                     <p class="mt-3 h4">R${{anuncio.valor}}</p>
                     <button type="submit" class="btn btn-secondary">
                         <a href="{% url 'detalhes' anuncio.id %}" class="text-white">Saber mais</a>
@@ -20,33 +33,6 @@
         </div>
     </div>
     {% endfor %}
-    <!-- <div class="col-sm-6 col-xl-4">
-        <div class="bg-terciary rounded p-4 ">
-            <div class="pt-1">
-                <p class="h3 text-center border-bottom">Carro HB20 usado</p>
-                <p class="p-2">HB20 modeo gx-89, 2 anos de uso, com todas as rodas intactas, bancos inteiros, 0 poeira,
-                    1.245km rodados, tanque cheio de diesel</p>
-                <div class="d-flex align-items-center justify-content-around">
-                    <p class="mt-3 h4">R$105,000</p>
-                    <button type="submit" class="btn btn-secondary">Saber mais</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- <div class="col-sm-6 col-xl-4">
-        <div class="bg-terciary rounded p-4 ">
-            <div class="pt-1">
-                <p class="h3 text-center border-bottom">Carro HB20 usado</p>
-                <p class="p-2">HB20 modeo gx-89, 2 anos de uso, com todas as rodas intactas, bancos inteiros, 0 poeira,
-                    1.245km rodados, tanque cheio de diesel</p>
-                <div class="d-flex align-items-center justify-content-around">
-                    <p class="mt-3 h4">R$105,000</p>
-                    <button type="submit" class="btn btn-secondary">Saber mais</button>
-                     <button type="submit" class="btn btn-secondary">Editar</button> --
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <a href="{% url 'form' %}" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-plus"></i></a>
+    <a href="{% url 'create' %}" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-plus"></i></a>
 </div>
 {% endblock %}

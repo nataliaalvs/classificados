@@ -21,9 +21,12 @@ urlpatterns = [
     # path('', home, name='home'),
     path('', inicio, name='inicio'),
     path('listagem/', listagem, name='listagem'),
+    path('busca/', busca, name='busca'),
     path('sobre/', sobre, name='sobre'),
     path('detalhes/<int:id>', detalhes, name='detalhes'),
     path('form/', form, name='form'),
     path('create/', crud, name='create'),
-    path('update/<int:id>', update, name='update')
+    path('update/<int:id>', update, name='update'),
+    path('login/', login, name= 'login'),
+
 ]

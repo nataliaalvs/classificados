@@ -1,16 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <style>
+        a.repo:hover {
+            color:#eb0258;
+        }
+    </style>
+
 <div class="container-fluid pt-4 px-4">
     <h1>Sobre o sistema web</h1>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fuga quae odio quia enim impedit a eligendi consequatur exercitationem ducimus vel, distinctio quas temporibus? Consequatur, velit nesciunt. Voluptas, sit fuga.</p>
+    <p class="pt-2">O diário IFRN é um projeto de conclusão de bimestre direcionado para o curso de Informática 4º ano, ele consiste em um site que tem como objetivo adicionar itens (classificados) que possam estar a venda ou para alugar. </p>
 
-    <p>Desenvolvedoras: Ariadny, Eloisa e Natália</p>
+    <p>Desenvolvedoras: Ariadny, Eloisa e Natália</i></p>
 
-    <div class="link">
+    <div class="pt-5">
         <i class="bi bi-github"></i>
-        <a href="https://github.com/nataliaalvs/classificados.git">Repositório GitHub</a>
+        <a class="repo fw-bold" href="https://github.com/nataliaalvs/classificados.git">Repositório GitHub</a>
     </div>
+
 </div>
 {% endblock %}

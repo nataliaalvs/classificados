@@ -15,6 +15,14 @@ def sobre(request):
 
     return render (request, 'sobre.html')
 
+def login(request):
+
+    return render (request, 'login.html')
+
+def busca(request):
+
+    return render (request, 'busca.html') 
+
 def detalhes(request,id):
     anuncio = Anuncios.objects.get(pk=id)
     return render (request, 'detalhes.html',{"anuncio":anuncio})

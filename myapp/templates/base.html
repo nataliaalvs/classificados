@@ -15,8 +15,9 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -33,214 +34,88 @@
 </head>
 
 <body>
-    <div class="container-fluid position-relative d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show  position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+
+<style> 
+.out:hover {
+    background: bisque;
+}
+</style>
+    <!-- Sidebar Start -->
+    <div class="sidebar pe-2 pb-3 bg-highlight">
+        <nav class="navbar ">
+            <a href="{% static 'index.html' %}" class="navbar-brand mx-4 mb-3 border-bottom">
+                <h3 class="text-primary"></i>Diário IFRN</h3>
+            </a>
+            <div class="navbar-nav w-100">
+                <a href="{% url 'inicio'  %}" class="nav-item nav-link  fw-bold">
+                    <i class="bi bi-balloon-heart"></i>Dashboard</a>
+                <a href="{% url 'create' %}" class="nav-item nav-link fw-bold"><i class="bi bi-table me-2"></i>CRUD</a>
+                <a href="{% url 'listagem' %}" class="nav-item nav-link fw-bold"><i
+                        class="bi bi-list-stars me-2"></i>Listagem</a>
+                <a href="{% url 'busca' %}" class="nav-item nav-link fw-bold"><i
+                        class="bi bi-search-heart me-2"></i>Consulta</a>
+                <a href="{% url 'sobre' %}" class="nav-item nav-link fw-bold"><i
+                        class="bi bi-info-circle-fill me-2"></i>Sobre</a>
             </div>
-        </div>
-        <!-- Spinner End -->
+        </nav>
+    </div>
+    <!-- Sidebar End -->
 
 
-        <!-- Sidebar Start -->
-        <div class="sidebar pe-2 pb-3 bg-highlight">
-            <nav class="navbar ">
-                <a href="{% static 'index.html' %}" class="navbar-brand mx-4 mb-3 border-bottom">
-                    <h3 class="text-primary"></i>Diário IFRN</h3>
-                </a>
-                <div class="navbar-nav w-100">
-                    <a href="{% url 'inicio'  %}" class="nav-item nav-link "><i class="bi bi-balloon-heart"></i>Dashboard</a>
-                    <!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-postcard-heart me-2"></i></i>Anuncios</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{% static 'button.html' %}" class="dropdown-item">Categorias</a>
-                            <a href="{% static 'typography.html' %}" class="dropdown-item">Novo anuncio</a>
-                            <a href="{% static 'element.html' %}" class="dropdown-item">Other Elements</a>
-                        </div>
-                    </div> -->
-                    <a href="{% url 'create' %}" class="nav-item nav-link"><i class="bi bi-table me-2"></i> CRUD</a>
-                    <a href="{% static 'table.html' %}" class="nav-item nav-link"><i class="bi bi-list-stars me-2"></i>Listagem</a>
-                    <a href="{% static 'chart.html' %}" class="nav-item nav-link"><i class="bi bi-search-heart me-2"></i>Consulta</a>
-                    <a href="{% url 'sobre' %}" class="nav-item nav-link"><i class="bi bi-info-circle-fill me-2"></i>Sobre</a>
-                    <a href="{% url 'form' %}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{% static 'signin.html' %}" class="dropdown-item">Sign In</a>
-                            <a href="{% static 'signup.html' %}" class="dropdown-item">Sign Up</a>
-                            <a href="{% static '404.html' %}" class="dropdown-item">404 Error</a>
-                            <a href="{% static 'blank.html' %}" class="dropdown-item">Blank Page</a>
-                        </div>
-                    </div> -->
+    <!-- Content Start -->
+    <div class="content">
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand bg-highlight sticky-top px-4 py-2">
+            <a href="{% static 'index.html' %}" class="navbar-brand d-flex d-lg-none me-4">
+                <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+            </a>
+            <a href="#" class="sidebar-toggler flex-shrink-0">
+                <i class="fa fa-bars"></i>
+            </a>
+            <!-- <form class="d-none d-md-flex ms-4">
+                <input class="form-control border-0" type="search" placeholder="Procurar">
+            </form> -->
+
+            <div class="navbar-nav align-items-center ms-auto">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <!-- <img class="rounded-circle me-lg-2" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;"> -->
+                        <i class="bi bi-person-fill"></i>
+                        <span class="d-none d-lg-inline-flex">Usuário</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end border-0 rounded-0 rounded-bottom m-0 bg-highlight">
+                        <a href="{% url 'login' %}" class="dropdown-item out">Sair</a>
+                    </div>
                 </div>
-            </nav>
-        </div>
-        <!-- Sidebar End -->
+            </div>
+        </nav>
+        <!-- Navbar End -->
 
 
-        <!-- Content Start -->
-        <div class="content bg-highlight">
-            <!-- Navbar Start -->
-            <nav class="navbar navbar-expand bg-highlight sticky-top px-4 py-2">
-                <a href="{% static 'index.html' %}" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
-                </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Procurar">
-                </form>
-                
-                <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <!-- <img class="rounded-circle me-lg-2" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;"> -->
-                            <i class="bi bi-person-fill"></i>                            
-                            <span class="d-none d-lg-inline-flex">Usuário</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end border-0 rounded-0 rounded-bottom m-0">
-                            <!-- <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a> -->
-                            <a href="#" class="dropdown-item">Sair</a>
-                        </div>
-                    </div>
-
-                <!-- <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Message</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificatin</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
-                    </div> --> 
-                </div> 
-            </nav> 
-            <!-- Navbar End -->
-
-
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
+        <!-- Sale & Revenue Start -->
+        <div class="container-fluid pt-4 px-4">
             {% block content %} {% endblock content %}
         </div>
-            <!-- Sale & Revenue End -->
 
-            <!-- Sales Chart Start --
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-terciary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-terciary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
+
+        <!-- Footer Start -->
+        <div class="container-fluid pt-4">
+            <div class="rounded-top p-4">
+                <div class="row">
+                    <div class="col-12 col-sm-6 text-center text-sm-start">
+                        2023 &copy; <a href="{% url 'inicio' %}">Diário InFeRNal</a>. Todos os direitos reservados.
                     </div>
                 </div>
             </div>
-            <-- Sales Chart End -->
-
-
-            <!-- Recent Sales Start (table) -->
-            
-            <!-- Recent Sales End -->
-
-
-            <!-- Widgets Start -->
-            
-            <!-- Widgets End -->
-
-
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                           2023 &copy; <a href="{% url 'inicio' %}">Diário InFeRNal</a>. Todos os direitos reservados. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
         </div>
-        <!-- Content End -->
+        <!-- Footer End -->
+    </div>
+    <!-- Content End -->
 
 
-        <!-- Back to Top -->
-        <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
-        
+    <!-- Back to Top -->
+    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
+
     </div>
 
     <!-- JavaScript Libraries -->
