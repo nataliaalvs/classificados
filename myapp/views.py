@@ -15,10 +15,6 @@ def sobre(request):
 
     return render (request, 'sobre.html')
 
-def login(request):
-
-    return render (request, 'login.html')
-
 def busca(request):
     return render (request, 'busca.html') 
 
@@ -36,6 +32,8 @@ def form(request):
     return render (request, 'form.html')
 
 def crud(request):
+    if request.user.is_authenticated == False:
+        return redirect("/account/login")
     form = AnunciosForm(request.POST or None)
     if form.is_valid():
         form.save()
@@ -44,6 +42,8 @@ def crud(request):
     return render(request, "create.html", pacote)
 
 def update(request, id):
+    if request.user.is_authenticated == False:
+        return redirect("/account/login")
     anuncio = Anuncios.objects.get(pk=id)
     formAnuncio = AnunciosForm(request.POST or None, instance=anuncio)
     if formAnuncio.is_valid():
@@ -52,6 +52,8 @@ def update(request, id):
     return render(request, "create.html", {"formAnuncio": formAnuncio})
 
 def delete(request, id):
+    if request.user.is_authenticated == False:
+        return redirect("/account/login")
     anuncio = Anuncios.objects.get(pk=id)
     anuncio.delete()
     return redirect("/")

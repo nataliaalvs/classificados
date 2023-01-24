@@ -29,6 +29,5 @@ urlpatterns = [
     path('create/', crud, name='create'),
     path('update/<int:id>', update, name='update'),
     path('delete/<int:id>', delete, name='delete'),
-    path('login/', login, name= 'login'),
     path('account/', include('django.contrib.auth.urls')),
 ]
