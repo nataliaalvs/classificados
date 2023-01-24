@@ -8,8 +8,10 @@ def inicio(request):
     return render (request, 'index.html',{"anuncios": anuncios})
 
 def listagem(request):
-    lista = Anuncios.objects.all()
-    return render(request,'listagem.html', {'lista':lista})
+    # lista = Anuncios.objects.all()
+    anuncios = Anuncios.objects.all()
+
+    return render(request,'listagem.html', {'anuncios':anuncios})
 
 def sobre(request):
 

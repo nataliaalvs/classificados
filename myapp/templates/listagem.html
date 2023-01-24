@@ -2,36 +2,41 @@
 
 {% block content %}
 <div class="row g-4">
-    <div class="col-12">
-        <div class="rounded h-100 p-4">
-            <h2 class="mb-4">Lista de classificados</h2>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Responsável</th>
-                            <th scope="col">Valor</th>
-                            <th scope="col">Cidade</th>
-                            <th scope="col">Categoria</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for anuncio in lista %}
-                        <tr>
-                            <th scope="row">{{ anuncio.id}}</th>
-                            <td>{{ anuncio.titulo }}</td>
-                            <td>{{ anuncio.responsavel }}</td>
-                            <td>{{ anuncio.valor }}</td>
-                            <td>{{ anuncio.cidade }}</td>
-                            <td>{{ anuncio.categoria }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+    {% for anuncio in anuncios %}
+    <div class="col-sm-6 col-xl-4">
+        <div class="bg-terciary rounded p-4">
+            <div class="pt-1">
+                
+                <div class="d-flex align-items-center justify-content-between">
+                    <p class="h3 text-center border-bottom">{{ anuncio.titulo }}</p>
+                    <!-- dropdown menu -->
+                    {% if user.is_authenticated %}
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                            <i class="bi bi-three-dots"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-center border-0 rounded-2 m-0 bg-highlight text-center">
+                            <a href="{% url 'update' anuncio.id %}" class="dropdown-item">Editar</a>
+                            <a href="{% url 'delete' anuncio.id %}" class="dropdown-item">Apagar</a>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <p class="py-2">{{ anuncio.anuncio}}</p>
+                <p><i class="bi bi-geo-alt"></i>{{ anuncio.cidade}}</p>
+                <div class="d-flex align-items-center justify-content-between">
+                    <p class="mt-3 h4">R${{anuncio.valor}}</p>
+                    <button type="submit" class="btn btn-sm btn-secondary">
+                        <a href="{% url 'detalhes' anuncio.id %}" class="text-white">Saber mais</a>
+                    </button>
+                    <!-- <button type="submit" class="btn btn-secondary">Editar</button> -->
+                </div>
             </div>
         </div>
     </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <a href="{% url 'create' %}" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-plus"></i></a>
+    {% endif %}
 </div>
 {% endblock %}

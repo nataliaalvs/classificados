@@ -8381,7 +8381,8 @@ fieldset:disabled .btn {
 
 
 .bg-login {
-    background-color: #eb0258;
+    /* background-color: #eb0258; */
+    background-color: brown;
 }
 
 .bg-success {
