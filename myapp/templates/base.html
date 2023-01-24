@@ -75,8 +75,8 @@
             <!-- <form class="d-none d-md-flex ms-4">
                 <input class="form-control border-0" type="search" placeholder="Procurar">
             </form> -->
-
             <div class="navbar-nav align-items-center ms-auto">
+                {% if user.is_authenticated %}
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                         <!-- <img class="rounded-circle me-lg-2" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;"> -->
@@ -87,6 +87,9 @@
                         <a href="{% url 'login' %}" class="dropdown-item out">Sair</a>
                     </div>
                 </div>
+                {% else %}
+                <p>não ta autenticado meu patrão</p>
+                {% endif %}
             </div>
         </nav>
         <!-- Navbar End -->

@@ -20,8 +20,12 @@ def login(request):
     return render (request, 'login.html')
 
 def busca(request):
-
     return render (request, 'busca.html') 
+
+def resbusca(request):
+    buscar = request.GET.get('busca')
+    res= Anuncios.objects.filter(titulo__icontains=buscar)
+    return render(request, 'res-busca.html', {"anuncios":res})
 
 def detalhes(request,id):
     anuncio = Anuncios.objects.get(pk=id)
@@ -46,3 +50,8 @@ def update(request, id):
         formAnuncio.save()
         return redirect("/") 
     return render(request, "create.html", {"formAnuncio": formAnuncio})
+
+def delete(request, id):
+    anuncio = Anuncios.objects.get(pk=id)
+    anuncio.delete()
+    return redirect("/")
