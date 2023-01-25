@@ -11,7 +11,7 @@
                     </a>
                 </div>
                 <h6 class="text-white">Insira suas credenciais para entrar <i class="bi bi-hearts"></i></h6>
-                <form action="." method="post">
+                <form action="." method="post" class="text-light">
                     {% csrf_token %}
                     {{ form | crispy}}
                     
